@@ -1,32 +1,16 @@
-# GripCraft Landing Page
+# React + Vite
 
-A high-performance e-commerce landing page designed for professional badminton grips. This project features a modern, dark-themed, and responsive web design with electric green accents, tailored for the intensity of elite athletic gear.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## Features
+Currently, two official plugins are available:
 
-- **Fully Responsive Design**: Optimized for mobile, tablet, and desktop viewing.
-- **Glassmorphism UI**: Uses blurred glass panels for a premium feel.
-- **Dynamic Animations**: Smooth scroll-reveal effects, parallax scrolling, and hover interactions.
-- **Design System Integration**: Consistent typography (Archivo Narrow, Hanken Grotesk) and color palette.
-- **Single Page Application**: Self-contained `index.html` built with Tailwind CSS via CDN.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Technologies Used
+## React Compiler
 
-- **HTML5**
-- **Tailwind CSS** (via CDN with custom configuration)
-- **Vanilla JavaScript** (for interactive components like mobile drawer and animations)
-- **Google Fonts**
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Setup and Usage
+## Expanding the Oxlint configuration
 
-Simply open the `index.html` file in any modern web browser to view the landing page. No build steps or local servers are strictly required!
-
-## Project Structure
-
-- `index.html` - The main responsive landing page containing all sections (Hero, Features, Product Grid, Reviews, etc.).
-- `gripcraft_visual_language/` - Contains the original `DESIGN.md` specifying the brand guidelines.
-- `gripcraft_high_performance_badminton_grips/` - Original desktop design reference.
-- `gripcraft_mobile_performance_grips/` - Original mobile design reference.
-
----
-*© 2024 GRIP TECH PERFORMANCE. ENGINEERED FOR SPEED.*
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
