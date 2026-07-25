@@ -7,9 +7,18 @@ import Reviews from './components/Reviews';
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
 
+import { motion, useScroll } from 'framer-motion';
+
 function App() {
+  const { scrollYProgress } = useScroll();
+
   return (
     <div className="bg-background text-on-background font-body-md overflow-x-hidden">
+      {/* Scroll Progress Bar */}
+      <motion.div 
+        className="fixed top-0 left-0 right-0 h-1 bg-secondary origin-left z-[100]"
+        style={{ scaleX: scrollYProgress }}
+      />
       <Header />
       <main>
         <Hero />

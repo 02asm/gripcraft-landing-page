@@ -1,6 +1,24 @@
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { useEffect } from 'react';
 
 export default function Hero() {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  
+  const rotateX = useTransform(y, [-300, 300], [15, -15]);
+  const rotateY = useTransform(x, [-300, 300], [-15, 15]);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const offsetX = e.clientX - window.innerWidth / 2;
+      const offsetY = e.clientY - window.innerHeight / 2;
+      x.set(offsetX);
+      y.set(offsetY);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -63,21 +81,27 @@ export default function Hero() {
 
         {/* Hero Image */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          style={{ perspective: 1000 }}
           transition={{ type: 'spring', damping: 20, stiffness: 100, delay: 0.5 }}
           className="relative mx-auto lg:mx-0 max-w-[360px] lg:max-w-none"
         >
           <div className="absolute -inset-4 bg-secondary/20 blur-[120px] rounded-full animate-pulse" style={{ animationDuration: '4s' }}></div>
           <motion.div 
-            animate={{ y: [0, -15, 0] }}
-            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+            style={{ rotateX, rotateY }}
+            transition={{ type: "spring", damping: 30, stiffness: 300 }}
           >
-            <img 
-              className="w-full h-auto drop-shadow-2xl" 
-              alt="Professional studio product shot of badminton grips" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTS1gdZ-dwsXybe6nLj8m5uO698Dnfy9SGMDjIgzSSAaEhFydFBbOd0dMlxQaLRrwTt7fbh401GRjmR8gmfIfhfWGQ_JKO0AHIzGJ0LG71dqYDX0XhZCxEbjJvEZWEwUneyi2ij7C90bZHXZai3Vt3cyzxNvJ74Ani_5939QksGCmlhFqRoDyyDexPxlhowoaqW_0mssxUUJR81ZrdqrEL5LfpWD-XnAihOZ48AedoVOvC469fIGD4fmpFw_trf6BzbQAAqxsn-BU" 
-            />
+            <motion.div
+              animate={{ y: [0, -15, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+            >
+              <img 
+                className="w-full h-auto drop-shadow-2xl" 
+                alt="Professional studio product shot of badminton grips" 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTS1gdZ-dwsXybe6nLj8m5uO698Dnfy9SGMDjIgzSSAaEhFydFBbOd0dMlxQaLRrwTt7fbh401GRjmR8gmfIfhfWGQ_JKO0AHIzGJ0LG71dqYDX0XhZCxEbjJvEZWEwUneyi2ij7C90bZHXZai3Vt3cyzxNvJ74Ani_5939QksGCmlhFqRoDyyDexPxlhowoaqW_0mssxUUJR81ZrdqrEL5LfpWD-XnAihOZ48AedoVOvC469fIGD4fmpFw_trf6BzbQAAqxsn-BU" 
+              />
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
