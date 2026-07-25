@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GRIPCRAFT | High-Performance Badminton Grips</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Hanken+Grotesk:wght@300;400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(31, 41, 55, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .angled-accent {
+            transform: skewX(-5deg);
+        }
+        .unskew {
+            transform: skewX(5deg);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #111415;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #94de2d;
+            border-radius: 2px;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-anim {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#acf847",
+                      "on-secondary": "#1f3700",
+                      "on-background": "#e1e3e4",
+                      "surface-variant": "#323536",
+                      "background": "#111415",
+                      "surface-tint": "#c0c6db",
+                      "secondary-fixed-dim": "#91db2a",
+                      "tertiary-container": "#171919",
+                      "surface-bright": "#373a3b",
+                      "error": "#ffb4ab",
+                      "on-tertiary": "#2f3131",
+                      "on-error": "#690005",
+                      "secondary": "#94de2d",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "surface-container-high": "#282a2b",
+                      "secondary-container": "#7ac100",
+                      "surface-container-lowest": "#0c0f10",
+                      "error-container": "#93000a",
+                      "on-surface": "#e1e3e4",
+                      "on-error-container": "#ffdad6",
+                      "inverse-surface": "#e1e3e4",
+                      "on-tertiary-container": "#808282",
+                      "primary-container": "#111827",
+                      "on-primary": "#293040",
+                      "primary-fixed-dim": "#c0c6db",
+                      "tertiary": "#c6c6c7",
+                      "outline-variant": "#45464c",
+                      "surface": "#111415",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "inverse-on-surface": "#2e3132",
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-secondary-fixed": "#102000",
+                      "surface-dim": "#111415",
+                      "surface-container-low": "#191c1d",
+                      "primary-fixed": "#dce2f7",
+                      "on-secondary-fixed-variant": "#304f00",
+                      "surface-container": "#1d2021",
+                      "on-surface-variant": "#c6c6cd",
+                      "on-primary-container": "#7a8194",
+                      "primary": "#c0c6db",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "outline": "#909097",
+                      "on-primary-fixed": "#141b2b",
+                      "surface-container-highest": "#323536",
+                      "on-secondary-container": "#2c4900",
+                      "on-primary-fixed-variant": "#404758",
+                      "inverse-primary": "#575e70"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "margin-desktop": "48px",
+                      "unit": "4px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Archivo Narrow"],
+                      "display-lg": ["Archivo Narrow"],
+                      "headline-lg": ["Archivo Narrow"],
+                      "headline-lg-mobile": ["Archivo Narrow"],
+                      "body-md": ["Hanken Grotesk"],
+                      "body-lg": ["Hanken Grotesk"],
+                      "label-caps": ["JetBrains Mono"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Header Navigation -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/10 shadow-sm">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface" href="#">GRIPCRAFT</a>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-body-md text-body-md text-secondary font-bold relative after:content-['/'] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:text-secondary" href="#">Shop All</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Texture</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Bundles</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Grip Guide</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container-high px-4 py-1.5 rounded-full border border-white/5">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface w-32 placeholder:text-on-surface-variant" placeholder="Find your grip..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-on-surface hover:text-secondary transition-all active:scale-95">shopping_cart</button>
+<button class="md:hidden material-symbols-outlined text-on-surface">menu</button>
+</div>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden">
+<!-- Animated Background -->
+
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary/10 border border-secondary/20 rounded-full">
+<span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Elite Performance Hardware</span>
+</div>
+<h1 class="font-display-lg text-[56px] md:text-display-lg text-on-surface leading-none uppercase italic">
+                        Maximum Control.<br/><span class="text-secondary italic">Zero Slip.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                        Engineered for the intensity of professional badminton. Our high-tack, moisture-wicking grips ensure your racquet feels like an extension of your arm—even in the third set.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-full font-headline-md text-headline-md flex items-center gap-2 hover:bg-secondary-fixed transition-all hover:scale-[1.02] active:scale-95">
+                            Shop Best Sellers <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="border-2 border-white/20 text-on-surface px-8 py-4 rounded-full font-headline-md text-headline-md hover:border-secondary hover:text-secondary transition-all active:scale-95">
+                            Take Grip Quiz
+                        </button>
+</div>
+</div>
+<div class="relative hidden lg:block">
+<div class="absolute -inset-4 bg-secondary/20 blur-[120px] rounded-full"></div>
+<div class="float-anim">
+<img class="w-full h-auto drop-shadow-2xl" data-alt="A professional studio product shot of several high-end badminton racquet handles vertically aligned. Each handle is wrapped in different vibrant colors of high-tack polyurethane overgrips including electric lime, deep charcoal, and bright orange. The lighting is dramatic and moody, emphasizing the micro-perforated texture of the materials. The background is a clean, dark slate gray with subtle atmospheric mist to evoke a premium athletic feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTS1gdZ-dwsXybe6nLj8m5uO698Dnfy9SGMDjIgzSSAaEhFydFBbOd0dMlxQaLRrwTt7fbh401GRjmR8gmfIfhfWGQ_JKO0AHIzGJ0LG71dqYDX0XhZCxEbjJvEZWEwUneyi2ij7C90bZHXZai3Vt3cyzxNvJ74Ani_5939QksGCmlhFqRoDyyDexPxlhowoaqW_0mssxUUJR81ZrdqrEL5LfpWD-XnAihOZ48AedoVOvC469fIGD4fmpFw_trf6BzbQAAqxsn-BU"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Filter -->
+<section class="py-12 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex items-center justify-between mb-8 overflow-x-auto custom-scrollbar pb-4">
+<div class="flex gap-3 shrink-0">
+<button class="px-6 py-2 bg-secondary text-on-secondary rounded-full font-label-caps text-label-caps uppercase whitespace-nowrap">All Grips</button>
+<button class="px-6 py-2 border border-white/10 hover:border-secondary hover:text-secondary rounded-full font-label-caps text-label-caps uppercase whitespace-nowrap transition-colors">Super Tacky</button>
+<button class="px-6 py-2 border border-white/10 hover:border-secondary hover:text-secondary rounded-full font-label-caps text-label-caps uppercase whitespace-nowrap transition-colors">Dry / Sweat Absorbent</button>
+<button class="px-6 py-2 border border-white/10 hover:border-secondary hover:text-secondary rounded-full font-label-caps text-label-caps uppercase whitespace-nowrap transition-colors">Cotton Towel</button>
+<button class="px-6 py-2 border border-white/10 hover:border-secondary hover:text-secondary rounded-full font-label-caps text-label-caps uppercase whitespace-nowrap transition-colors">Replacement Grips</button>
+<button class="px-6 py-2 border border-white/10 hover:border-secondary hover:text-secondary rounded-full font-label-caps text-label-caps uppercase whitespace-nowrap transition-colors">Multipacks</button>
+</div>
+<button class="hidden md:flex items-center gap-2 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">tune</span>
+<span class="font-label-caps text-label-caps uppercase">Filter &amp; Sort</span>
+</button>
+</div>
+<!-- Featured Products Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product 1 -->
+<div class="group relative bg-surface-container p-4 rounded-lg border border-white/5 hover:translate-y-[-4px] transition-all duration-300">
+<div class="relative aspect-square mb-4 bg-surface-container-highest rounded-lg overflow-hidden">
+<div class="absolute top-2 left-2 z-10 flex flex-col gap-1">
+<span class="bg-secondary text-on-secondary text-[10px] font-label-caps px-2 py-0.5 rounded-full uppercase">Best Seller</span>
+<span class="bg-surface-bright text-on-surface text-[10px] font-label-caps px-2 py-0.5 rounded-full uppercase">Sweat-Proof</span>
+</div>
+<div class="absolute top-2 right-2 z-10 bg-surface-container/80 backdrop-blur px-1.5 py-0.5 rounded border border-white/10 flex items-center gap-1">
+<span class="font-label-caps text-[10px] text-secondary">4.9</span>
+<span class="material-symbols-outlined text-secondary text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A close-up product photo of a GripCraft Pro-Tack 0.6mm Overgrip in electric volt green. The overgrip is perfectly rolled and shows off its distinctive micro-perforated surface texture. The lighting highlights the matte finish and professional grade quality. Dark studio background with vibrant green neon accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfQwmxYt7RTQ2ZFmQJjMecAxtP1Vz3lObNtP_mydsqSHEgwBBFghJvGNjg-2fmU3fRs_Z0ReOabLOqeS44nS0A2wG3fh7hufn5AME1qSPn5xe4ydPgoOrNsX3e3Kk7bK3Om0yMyhahUrZ20GuCK1SxCSjVP3YKDcWzmRBeXt_apGIMwRhIdcGOXt8LKjw9ew9ezgcLnOdnrlGXtzRTNC62ubm0BCqcsCgH-FrGRge8ozL3Q5vOrvCKxRszJF8RXxVFn6zpaJs3Hc4"/>
+</div>
+<h3 class="font-headline-md text-on-surface text-lg mb-1 leading-tight">GripCraft Pro-Tack 0.6mm Overgrip - 3 Pack</h3>
+<p class="text-on-surface-variant text-sm mb-4">Ultimate tack for precision control.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-1.5">
+<div class="w-4 h-4 rounded-full bg-secondary border-2 border-white ring-2 ring-transparent"></div>
+<div class="w-4 h-4 rounded-full bg-white border border-white/20"></div>
+<div class="w-4 h-4 rounded-full bg-surface-variant border border-white/20"></div>
+</div>
+<span class="font-headline-md text-on-surface">$12.99</span>
+</div>
+<button class="mt-4 w-full bg-surface-bright text-on-surface py-2 rounded-full font-label-caps text-label-caps uppercase hover:bg-secondary hover:text-on-secondary transition-colors active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span> Quick Add
+                        </button>
+</div>
+<!-- Repeat for Product 2, 3, 4 (Variations) -->
+<div class="group relative bg-surface-container p-4 rounded-lg border border-white/5 hover:translate-y-[-4px] transition-all duration-300">
+<div class="relative aspect-square mb-4 bg-surface-container-highest rounded-lg overflow-hidden">
+<div class="absolute top-2 left-2 z-10">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-label-caps px-2 py-0.5 rounded-full uppercase">Limited Edition</span>
+</div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Product shot of a professional badminton replacement grip in sleek midnight black with embossed GRIPCRAFT logos. The material looks premium and cushioned, approximately 1.5mm thick. High contrast lighting accentuating the deep black tones and the luxurious tactile feel of the polyurethane. Minimalist athletic styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD2XvujsCMt6j16JCmV36sohodgoJfmuq4ZGxaBaqxjmfO0WDwp7x3AFEqAVT0eyRT_eI4_ybOaJTL9thzkBax4v7OvTBYM17_Z2IkcZGBdQmk-mkxpAvPkCgIgy4u1sXnMs6i0JjnHQoLf09Nm2AktZLS1OwnLquNZCcsranpOdO_miDy4xhJrPDZL1XiUX9GK1fCLu5Y_0rHfUmLa8OamrLh9BYz81z9_7IlWhzRnl35J50UmreqIhx26AbaDVLaG1zhsNkl41I"/>
+</div>
+<h3 class="font-headline-md text-on-surface text-lg mb-1 leading-tight">Elite Cushion Replacement Grip</h3>
+<p class="text-on-surface-variant text-sm mb-4">1.5mm thickness for shock absorption.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-1.5">
+<div class="w-4 h-4 rounded-full bg-surface-variant border-2 border-white ring-2 ring-transparent"></div>
+<div class="w-4 h-4 rounded-full bg-red-600"></div>
+</div>
+<span class="font-headline-md text-on-surface">$8.50</span>
+</div>
+<button class="mt-4 w-full bg-surface-bright text-on-surface py-2 rounded-full font-label-caps text-label-caps uppercase hover:bg-secondary hover:text-on-secondary transition-colors active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span> Quick Add
+                        </button>
+</div>
+<div class="group relative bg-surface-container p-4 rounded-lg border border-white/5 hover:translate-y-[-4px] transition-all duration-300">
+<div class="relative aspect-square mb-4 bg-surface-container-highest rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A pack of cotton towel grips for badminton racquets. The texture is fluffy, absorbent, and premium. One grip is shown unrolled, revealing its high-density cotton fibers designed for maximum sweat absorption. Soft morning light aesthetic, clean and hygienic presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1ZQYyOknQlaO2abvB83QlqgArKuBE-EbsLp79vRlhzvrDsU2ibT627EqX7B6HMW8m7XYq2eztOyZKdG632vTq0rEIcpPjp2wTr9A2e9qnQh3ZUUbwoHr4ucFQ8Gu4c1_0cFGWVDynJKxAaZt6z7sVomvGeVrPYkjGC468UkJeSmNYjLIZuJDr7DZACXYlu-rc-3Nl3C__eYUJ7hnLW1HYaXWfFDHuStx9JKKPAIm-gfg45pCZcd2uZZPLEVG7bQc1VDR-2za4310"/>
+</div>
+<h3 class="font-headline-md text-on-surface text-lg mb-1 leading-tight">Cotton-Pro Towel Grip</h3>
+<p class="text-on-surface-variant text-sm mb-4">Maximum absorption for heavy hitters.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-1.5">
+<div class="w-4 h-4 rounded-full bg-white border-2 border-white ring-2 ring-secondary"></div>
+<div class="w-4 h-4 rounded-full bg-blue-400"></div>
+</div>
+<span class="font-headline-md text-on-surface">$15.99</span>
+</div>
+<button class="mt-4 w-full bg-surface-bright text-on-surface py-2 rounded-full font-label-caps text-label-caps uppercase hover:bg-secondary hover:text-on-secondary transition-colors active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span> Quick Add
+                        </button>
+</div>
+<div class="group relative bg-surface-container p-4 rounded-lg border border-white/5 hover:translate-y-[-4px] transition-all duration-300">
+<div class="relative aspect-square mb-4 bg-surface-container-highest rounded-lg overflow-hidden">
+<div class="absolute top-2 left-2 z-10">
+<span class="bg-error-container text-on-error-container text-[10px] font-label-caps px-2 py-0.5 rounded-full uppercase">Low Stock</span>
+</div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A bundle pack of assorted multi-colored badminton overgrips. 12 grips total in various neon and classic colors. The packaging is minimal and eco-friendly. Bright, energetic lighting with sharp shadows. Professional sports equipment photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8NzhWEiO6qt4uHTJy3I3SxMrpN_inkNuxNGbS-ZqbnQHdJmEvJVkURBinLaWDuoPbkOyOC2emBosc_beyTJenFALtL2dDn8cSOSTS2Bf3PVA0fcmbnLrf0g73egXYa8Dik23oBTrQrvBxQw80pBeiF8lP18lqkeYoIIRZw2yVeKhweiRw4mGXxbhvUYm_iQU2NVpwGwjq9AVFHxnU3xoMyxJ-W5FDT6y5oeStM77dJAcRQNJ2mCe8A8FqVQweVTBGg_ClADVaTfI"/>
+</div>
+<h3 class="font-headline-md text-on-surface text-lg mb-1 leading-tight">GripMaster Multi-Pack (12pk)</h3>
+<p class="text-on-surface-variant text-sm mb-4">Stock up for the entire season.</p>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Assorted Colors</span>
+<span class="font-headline-md text-on-surface">$39.99</span>
+</div>
+<button class="mt-4 w-full bg-surface-bright text-on-surface py-2 rounded-full font-label-caps text-label-caps uppercase hover:bg-secondary hover:text-on-secondary transition-colors active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span> Quick Add
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Prop Section -->
+<section class="py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-2 angled-accent">
+<span class="material-symbols-outlined text-4xl unskew">air</span>
+</div>
+<h4 class="font-headline-md text-headline-md uppercase italic">Micro-Perforated Air Flow</h4>
+<p class="text-on-surface-variant leading-relaxed">Advanced ventilation channels wick moisture away from your palm instantly, maintaining a bone-dry contact point during high-intensity rallies.</p>
+</div>
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-2 angled-accent">
+<span class="material-symbols-outlined text-4xl unskew">texture</span>
+</div>
+<h4 class="font-headline-md text-headline-md uppercase italic">Ultra-Tack Polyurethane</h4>
+<p class="text-on-surface-variant leading-relaxed">Our proprietary PU compound delivers a "stuck-to-your-hand" feel that actually increases in grip as your hand warms up. Total control, zero slip.</p>
+</div>
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-2 angled-accent">
+<span class="material-symbols-outlined text-4xl unskew">layers</span>
+</div>
+<h4 class="font-headline-md text-headline-md uppercase italic">Optimal Cushion</h4>
+<p class="text-on-surface-variant leading-relaxed">Calibrated between 0.6mm and 0.75mm to provide enough shock absorption for comfort without sacrificing the "feel" of the handle and shot feedback.</p>
+</div>
+</div>
+</section>
+<!-- Comparison Banner -->
+<section class="relative py-20 overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-low/50"></div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col lg:flex-row items-center gap-12 bg-surface-container-high rounded-3xl p-8 lg:p-16 border border-white/5 shadow-2xl">
+<div class="lg:w-1/3 text-left">
+<h2 class="font-headline-lg text-headline-lg uppercase italic mb-6">Find Your Match</h2>
+<p class="text-on-surface-variant mb-8">Not all hands are the same. Choose the texture that matches your playstyle and sweat levels.</p>
+<button class="bg-secondary text-on-secondary px-8 py-3 rounded-full font-label-caps text-label-caps uppercase tracking-wider hover:scale-105 transition-transform">Download Selection Guide</button>
+</div>
+<div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-6">
+<div class="bg-surface p-6 rounded-2xl border border-white/10 hover:border-secondary transition-colors group">
+<h5 class="font-label-caps text-secondary mb-2">TACKY</h5>
+<p class="text-xs text-on-surface-variant mb-4">Dry hands, precision play.</p>
+<img class="w-full h-32 object-cover rounded-lg mb-4 grayscale group-hover:grayscale-0 transition-all" data-alt="Macro photography of a super tacky polyurethane grip surface. The image shows the smooth, slightly glossy finish and the way it subtly reflects light, conveying its sticky, high-control nature. Minimal dark studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFMhLzlec1RnnWbyMZ2dxBp0Ve5ZUdMZPliaUlVr3_DunsaHKlJ7k7-8GCQFheE34k-Qx4UoQpqvKPxRSpGYAz0sMO0YDTtzLPSgy4x_otyfNG5CdLs5Jg-O7-CQixEnSPxH-bSlzNpD2b-LOiGdZncyPiDKMKIR-RkWrDQcd8WdA2OB3nb5WcX-a7LhWVp_uGX75-w1UgwA48caraD0zWANiYERnYYp1q0hMd4fp-r-pdVlNNDJX032gx92vkbyxFnqOWfMZtwC4"/>
+<ul class="text-xs space-y-2 text-on-surface">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary"></span> 0.6mm Thickness</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary"></span> High Friction</li>
+</ul>
+</div>
+<div class="bg-surface p-6 rounded-2xl border border-white/10 hover:border-secondary transition-colors group">
+<h5 class="font-label-caps text-secondary mb-2">TOWEL</h5>
+<p class="text-xs text-on-surface-variant mb-4">Heavy sweat, power play.</p>
+<img class="w-full h-32 object-cover rounded-lg mb-4 grayscale group-hover:grayscale-0 transition-all" data-alt="Macro close-up of a high-quality cotton towel grip. The texture of the loops is clearly visible, suggesting high absorbency and a soft, comfortable feel. Clean, bright studio lighting with a focus on material depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpxcNukoy39I6L0mvPhu5-xaMBlYSG7wGpn1aLMPlnCRPAhZHAqo3cIAwm6NstMPQh8JjKVunJrJX6O1j_uEWvoM7XCV2rNVC5TMoYXDFIZSWlFCkRZYx3PzMoyyMlYfWU0-B6v3JVJ0H6Sr7pfvfP4rdMx8aGW8u79WGEsjboD40oRyBPYqlondJFcZksl2yn7Lw4InMFEiZ_Lqb09InYLdbAy5LRPC6ZAeSpJgalbiQqQ7EFfi8CAcjvEAs1b_kLe3VbSQxlndw"/>
+<ul class="text-xs space-y-2 text-on-surface">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary"></span> 1.2mm Thickness</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary"></span> Max Absorption</li>
+</ul>
+</div>
+<div class="bg-surface p-6 rounded-2xl border border-white/10 hover:border-secondary transition-colors group">
+<h5 class="font-label-caps text-secondary mb-2">PERFORATED</h5>
+<p class="text-xs text-on-surface-variant mb-4">Humid conditions, hybrid.</p>
+<img class="w-full h-32 object-cover rounded-lg mb-4 grayscale group-hover:grayscale-0 transition-all" data-alt="Macro shot of a perforated grip showing neat, even ventilation holes across a matte surface. The lighting comes from an angle to emphasize the depth of the perforations. Professional, technical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWO8ZlApJYs-_HubEgn2nXbjUTpSYf5O1XPz52PeGYDPdjEjhv3MqPRLJFa6XNg3oLEUDQIG3GvuPxvF3QsCd9AsNglrfpuUXPaMDMhUQxKkOGtR1yWmkuTF9RrH-Md3DPhZJHO-rU9ANGoWITYSGVOKDemVlop4bvSrm-rS8SwRTzrFa_VXmPH3YcvSx5Lhg_dsx2NBxu32jtggpdGkikjrD4v1vD7Nf9wSfmQRhE5tZVIWyt32WaBkXXfwH1t1ZOEqhIWf7rjH0"/>
+<ul class="text-xs space-y-2 text-on-surface">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary"></span> 0.7mm Thickness</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary"></span> Breathable Finish</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews & Instagram Photo Strip -->
+<section class="py-24 bg-background overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg uppercase italic mb-4">Club Proven. Pro Endorsed.</h2>
+<div class="flex justify-center gap-1 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-20">
+<div class="bg-surface-container p-8 rounded-3xl border border-white/5">
+<p class="font-body-lg text-on-surface mb-6 italic">"Switched from the big brands to GripCraft and never looked back. The Pro-Tack stays tacky even in high humidity club matches."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A candid profile portrait of a smiling amateur badminton player in professional gear. Natural gym lighting, energetic and authentic vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUk9gC7cDvwDmtw20eBPfqrRjq_4-Ab5m_sR39G-z08DHKfTXukxRBpMFXonfPJpFXDJ4JDzEFIgfJWXkyMFU9ZgQeA9n8t4GYkrthkhYU8JeDQHPgCQt-nD9sdTD835DY3vTPVkGPIsujveeyDZbBZNUXi-MaJJxTl4pbpNJgKzobk5WyD5sG1gWMIrglcCKi37dzROhf1T8DLh29BRcdIpgReydJgBpM8Po2TdnqDt-tKU-TbDiPBJoMcn2aloZsHUN03biB1zk"/>
+</div>
+<div>
+<h6 class="font-headline-md text-sm">Marcus Chen</h6>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase">Regional Club Player</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-8 rounded-3xl border border-white/5">
+<p class="font-body-lg text-on-surface mb-6 italic">"The towel grips are a lifesaver. I play 5 days a week and these last twice as long as anything else I've tried. Absolute value."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young female badminton athlete wiping sweat with a towel, looking focused and determined. High contrast lighting, athletic mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYCHmvfPR5kxDykjA7G9mXaXeBo0SKQzrfmERstSd2gBngS117r9wyrXgCY39cV1WXHwlC0DEWK5cjN6ppDCzQYmTIX_CrMIJyVzbyc59kNXgnCVpvxWw5pAjZr3rYrLIC4DaX7S4HBGF6zJ4VYKO5NIXA7tC4S3TXEUlC2_PljWwPSlqcUuMuJZuELg8GaFdLN3UoYnBL_eKYfcqTGbyKIhVtlB4zGuPjhx4l0omjEMI73GChC2ujW2-sqhx8TIVzUC7ZfsJqjMI"/>
+</div>
+<div>
+<h6 class="font-headline-md text-sm">Sarah Jenkins</h6>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase">Division 1 Competitor</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-8 rounded-3xl border border-white/5">
+<p class="font-body-lg text-on-surface mb-6 italic">"Precision at 0.6mm is unmatched. I feel the racquet's handle bevels perfectly which is crucial for my deception shots."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A close up of a male athlete's hand holding a badminton racquet, showing the perfect grip technique. Dramatic side lighting highlighting muscles and texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq52RJx6dLt7P84t9JsqOZHi6WYNMizHYq5kOZV5Kt2x9aj1PSbQQgdT0YWro8JTu5rXOOpDrZuZbnu5yPlAaUh5x8wtTA0IZnwWaBTV2FYn7ORDuMoqdVPNOfzDm2O7ASOTL9RjDW1AwlgGjHl5rMtfihjABriJ2DzMi6iFT6ImO46-lroOHggciScK5NQE639HxZhN95igjOJ9sRcvkbivb_MlMwlYGvQsYnH_vbx5ldfIte8RnY2jJqbdC7GOOhdO4RDAkQ9dg"/>
+</div>
+<div>
+<h6 class="font-headline-md text-sm">Alex Rivera</h6>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase">Badminton Coach</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Instagram Strip -->
+<div class="flex flex-col gap-8">
+<div class="flex items-center justify-between">
+<h3 class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-on-surface-variant">#GRIPCRAFTGALLERY</h3>
+<a class="text-secondary font-label-caps text-[10px] uppercase border-b border-secondary" href="#">Follow on IG</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-6 gap-2">
+<div class="aspect-square bg-surface-container overflow-hidden rounded-lg group cursor-pointer relative">
+<div class="absolute inset-0 bg-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="High-quality Instagram style photo of a badminton court bag filled with colorful racquets and GripCraft products. Warm sunset lighting through gym windows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP_-yYI9hocx6d_cenS4oy6JyDNHMfyzu-vOsDz-eyuGcaEhpy21RGgOB5rS46PEM3jlsoQvxVGmQOQueZhLWsDoT_TmaYT97zXDvJ9nkpsKNfRLYs0fLF19FrC_xksswsAoDzRl8p52tKoOsVSCiblbYInekTl1dMYmslg4uFYowZVHUkF0xx6CtGHM4C9ybquvCS0xNhllLKo4zpptHYYlrG2ZMIBmD7KM_lDKe8zzxm-e5ywoQyt1iEjYHBweSCqf_wo9rKEbY"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden rounded-lg group cursor-pointer relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Action shot of a badminton smash, focusing on the athlete's hand grip. Motion blur on the shuttlecock, sharp focus on the grip texture. Pro photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNQFngOAelR3TJUouX8-YMVl2hf1ahJzwO90rnjzscKbf4CdiVgeIogWyA-X0FxcNtM3-cU-AEisNb1MtjJiNRwkv7EKh5b8WQVZNDCLppDjhx-JGE5jskHxXkzK2ELv6728BeZkXLoFSaO8x-yV6MWdV4zKkdJc6u6REvU96c309lUjNjpzeLYgfGPlglM_PbaPJ32Y0-bqEXYIUTOUwHuE7lh84BxCupa3RM_riqzusfM1kBWQtTIiWSd0qWhaUvtOrkShYD83Q"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden rounded-lg group cursor-pointer relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Top-down flat lay of badminton equipment including several packs of overgrips, shuttlecocks, and a sleek black racquet. Minimalist composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfqG_sK4rltHzKXKcZnlZCDtLpcegicVke6esDDdE593IxgOWN32CsoomLagmB_GwUx565IebwB45v11sH3wa-Hx1m8gmsDKOg7Le2eeI8oioLL4Ec057b8MyN3SQ3z5ihcbo0VpZW5JA4fNZcosOEmuCo8DMJxStCXvdsYgKQ2zU-F566QqNONZb2fvVwYZ_4hnu7Zo1nPAX02kymnxw8SUcwiTw9sxi1fERWd7Ql5pciCmHHt2LoHmaVckovHJY8GQxWl3OZbBQ"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden rounded-lg group cursor-pointer relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Close-up of hands wrapping a racquet handle with electric green overgrip. Educational and satisfying visual. Clean studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA04WlyV3OfIFqZ5eFpFbKPL8Ln2PTA8YnjXiMigV2sEKRKBBxOahUCeH4pDlJOAEVZ1_cflatklpBDn2xepEoEgHsUrxVJp5pN-y0zV1L1tHRxQpZ0OcqfH-fe6o-bSdEQiIZ9qHhmOMUfWTh4nBL4_rChKCry1n2PC_FUu-2PhzeuHAxAy7Ht3WUl5ltAHYDJlfTfr8yp2t1t59Cx43YkbrURaXBHPiDCubtrZ9umqZAff1pnR6c3nDQDlcg7wH5r87u6ZwOYC4c"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden rounded-lg group cursor-pointer relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="A group of smiling players at a badminton club, all holding racquets with brightly colored grips. Community and lifestyle feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwVh2_-c2b7nykFzUDOOBrALAel1yXCG_rE_Aq3oVFpSRLohuO77JCp0lf3UVPzZxmht99HPbUmM6eWMiojLLVNw2MH2fRXrTqLNOJ-ycCING1AGy5N8n6LLuPA9BGWZoDqfkfg2sQoIe9EHrqtd3o2c1ErqLHK3GOJCzwRSk49mYHVnIMSwvKnO6PejRNd12IiQGiX-PfqeceAkEvlkx2HmmQHNR8c40ENEnUgA62Met8IsEmZ3O3pN1IMCq4t0JSkDZ96_xvaB0"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden rounded-lg group cursor-pointer relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="A stylized shot of a single badminton racquet leaning against a gym wall with neon lighting reflecting on its handle. Cyberpunk athletic vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOb3wxuO-1YFD4jpaI4flyrN2OCENuQ4vWLehTB5cDZ1DknwMDL6nWSvP5mOQsC5wY6ozESS-YMhXEH7AMKSf4PZ3R2JTLV7GX22zar8j78mnAJproJXARLYpuUtt8UdqVAPVJ_eMg1SViO_KxaEa3sm7Igd_SLzYnhjAJ-1GuLiogofvjw0pNaX6FpiYhG3zvWccAa3FfbEa1ZcdhvZzvbdgVLevJbmOhLWAnmUopKNiznirPknEeYJzHchnQJh9L7dJiME0uEyw"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="relative bg-secondary overflow-hidden rounded-[2rem] px-8 py-16 text-center">
+<div class="absolute inset-0 opacity-10">
+
+</div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="font-display-lg text-4xl md:text-5xl text-on-secondary uppercase italic mb-4">Join the Elite.</h2>
+<p class="font-body-lg text-on-secondary/80 mb-10">Sign up for the 'Grip Guide' newsletter and get 15% off your first order. Plus, early access to limited edition drops.</p>
+<form class="flex flex-col sm:flex-row gap-3">
+<input class="flex-grow bg-white/20 border-2 border-white/30 rounded-full px-6 py-4 placeholder:text-on-secondary/50 text-on-secondary focus:border-on-secondary focus:ring-0 outline-none" placeholder="Enter your email" type="email"/>
+<button class="bg-on-secondary text-secondary px-10 py-4 rounded-full font-headline-md text-headline-md hover:scale-105 active:scale-95 transition-all" type="submit">GET DISCOUNT</button>
+</form>
+<p class="mt-6 text-[10px] font-label-caps text-on-secondary/60 uppercase">Join 12,000+ Players worldwide. No spam, just speed.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full rounded-t-lg mt-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-16 max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="font-headline-md text-headline-md italic text-on-surface">GRIP TECH</div>
+<p class="font-body-md text-on-tertiary-container">Precision hardware for high-performance athletes. Engineered in the lab, proven on the court.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-on-secondary">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-on-secondary">alternate_email</span>
+</a>
+</div>
+</div>
+<div>
+<h6 class="font-label-caps text-label-caps text-secondary mb-6 uppercase">Shop</h6>
+<ul class="space-y-3 font-body-md text-on-tertiary-container">
+<li><a class="hover:text-on-surface hover:translate-x-1 transition-transform inline-block" href="#">Best Sellers</a></li>
+<li><a class="hover:text-on-surface hover:translate-x-1 transition-transform inline-block" href="#">Overgrips</a></li>
+<li><a class="hover:text-on-surface hover:translate-x-1 transition-transform inline-block" href="#">Replacement Grips</a></li>
+<li><a class="hover:text-on-surface hover:translate-x-1 transition-transform inline-block" href="#">Multipacks</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label-caps text-label-caps text-secondary mb-6 uppercase">Support</h6>
+<ul class="space-y-3 font-body-md text-on-tertiary-container">
+<li><a class="hover:text-on-surface hover:translate-x-1 transition-transform inline-block" href="#">Shipping</a></li>
+<li><a class="hover:text-on-surface hover:translate-x-1 transition-transform inline-block" href="#">Returns</a></li>
+<li><a class="hover:text-on-surface hover:translate-x-1 transition-transform inline-block" href="#">Contact</a></li>
+<li><a class="hover:text-on-surface hover:translate-x-1 transition-transform inline-block" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label-caps text-label-caps text-secondary mb-6 uppercase">Legal</h6>
+<ul class="space-y-3 font-body-md text-on-tertiary-container">
+<li><a class="hover:text-on-surface hover:translate-x-1 transition-transform inline-block" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-on-surface hover:translate-x-1 transition-transform inline-block" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/5 py-8 text-center max-w-container-max mx-auto">
+<p class="font-label-caps text-label-caps text-on-tertiary-container">© 2024 GRIP TECH PERFORMANCE. ENGINEERED FOR SPEED.</p>
+</div>
+</footer>
+<script>
+        // Simple parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('.float-anim');
+            if(heroImage) {
+                heroImage.style.transform = `translateY(${scrolled * 0.15}px)`;
+            }
+        });
+
+        // Sticky header transition
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+        });
+    </script>
+</body></html>
